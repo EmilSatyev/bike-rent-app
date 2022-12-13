@@ -4,6 +4,9 @@ const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 const {errorHandler, notFound} = require('./middleware/errorMiddleware')
+const MongoClient = require('mongodb').MongoClient
+const url = require('url')
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -21,7 +24,7 @@ app.use(errorHandler);
 app.listen(port, () => console.log(`Server Running on port ${port}`));
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.DB_URI)
   .then(() =>
     app.listen(port, () => {
       console.log(`App listening ${port}`);
