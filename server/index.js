@@ -14,4 +14,13 @@ app.get("/api/test", (req, res) => {
 
 app.listen(port, () => console.log(`Server Running on port ${port}`));
 
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() =>
+    app.listen(port, () => {
+      console.log(`App listening ${port}`);
+    })
+  )
+  .catch((err) => console.log("DB error", err));
+
 module.exports = app;
