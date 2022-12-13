@@ -12,7 +12,6 @@ app.use("/static", express.static(__dirname + "/assets"));
 
 // Middleware
 
-app.use(errorHandler)
 
 app.get("/api/test", (req, res) => {
   res.send("Hello worlwd");
