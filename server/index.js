@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/static", express.static(__dirname + "/assets"));
 
 // Middleware
-app.use(notFound)
+
 app.use(errorHandler)
 
 app.get("/api/test", (req, res) => {
