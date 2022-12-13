@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 5000;
+const {errorHandler,notFound} = require('./middleware/errorMiddleware')
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
