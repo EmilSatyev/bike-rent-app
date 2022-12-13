@@ -4,6 +4,7 @@ const notFound = (err, req, res, next) => {
   res.json({
     message: err.message,
   })
+  next()
 }
 
 const errorHandler = (req, res, next) => {
