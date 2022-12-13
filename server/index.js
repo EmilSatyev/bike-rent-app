@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 5000;
+const {errorHandler,notFound} = require('./middleware/errorMiddleware')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use("/static", express.static(__dirname + "/assets"));
+app.use("/api/", require("./routes/bikes"));
 
 app.get("/api/test", (req, res) => {
   res.send("Hello worlwd");
