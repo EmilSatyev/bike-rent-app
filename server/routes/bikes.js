@@ -27,7 +27,7 @@ const upload = multer({ storage });
 
 // получить все велосипеды
 router.get("/bikes", getBikes);
-
+/*
 // создать велосипед
 router.post("/bikes", upload.single("bikeImage"), createBike);
 
@@ -47,6 +47,6 @@ router.get("/types", getTypes);
 router.get("/brands", getBrands);
 
 // получить размеры
-router.get("/sizes", getSizes);
+router.get("/sizes", getSizes);*/
 
 module.exports = router;
