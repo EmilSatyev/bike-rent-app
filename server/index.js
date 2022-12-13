@@ -12,7 +12,7 @@ app.use("/static", express.static(__dirname + "/assets"));
 
 
 app.get("/api/test", (req, res) => {
-  res.send("Hello worlwd");
+  res.send("Hello worl");
 });
 
 app.listen(port, () => console.log(`Server Running on port ${port}`));
