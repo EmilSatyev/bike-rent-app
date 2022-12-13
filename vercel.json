@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "outputDirectory": "server",
+  "outputDirectory": "/server",
   "builds": [
     {
       "src": "./index.js",
