@@ -5,6 +5,7 @@ const notFound = (err, req, res, next) => {
   //   message: err.message,
   // })
   // next()
+  res.status(404)
 }
 
 const errorHandler = (req, res, next) => {
