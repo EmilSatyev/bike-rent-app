@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/api/test", (req, res) => {
-  res.send("Hello world");
+  res.send("Hello worlwd");
 });
 
 app.listen(port, () => console.log(`Server Running on port ${port}`));
