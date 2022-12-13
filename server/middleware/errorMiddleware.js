@@ -3,7 +3,6 @@ const notFound = (err, req, res, next) => {
   res.status(statusCode)
   res.json({
     message: err.message,
-
   })
 }
 

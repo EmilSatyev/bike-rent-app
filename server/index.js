@@ -10,13 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use("/static", express.static(__dirname + "/assets"));
 
-app.use(notFound);
-app.use(errorHandler);
-
-
 app.get("/api/test", (req, res) => {
   res.send("Hello");
 });
+
+app.use(notFound);
+app.use(errorHandler);
+
 
 app.listen(port, () => console.log(`Server Running on port ${port}`));
 
