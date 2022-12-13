@@ -10,12 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/static", express.static(__dirname + "/assets"));
 
+// Middleware
+app.use(notFound)
+app.use(errorHandler)
 
 app.get("/api/test", (req, res) => {
   res.send("Hello worlwd");
 });
-
-app.listen(port, () => console.log(`Server Running on port ${port}`));
 
 mongoose
   .connect(process.env.MONGO_URI)
