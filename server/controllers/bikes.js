@@ -11,7 +11,8 @@ const getCities = async (req, res) => {
     });
     console.warn(err);
   }*/
-  res.json({message: "sdf"});
+  const cities = await City.find();
+  res.json(cities);
 };
 
 
