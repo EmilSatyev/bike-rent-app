@@ -1,10 +1,10 @@
 const notFound = (err, req, res, next) => {
-  const statusCode = res.statusCode === 200 ? 500 : res.statusCode
-  res.status(statusCode)
+  // const statusCode = res.statusCode === 200 ? 500 : res.statusCode
+  // res.status(statusCode)
   // res.json({
   //   message: err.message,
   // })
-  next()
+  // next()
 }
 
 const errorHandler = (req, res, next) => {
