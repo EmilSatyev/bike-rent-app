@@ -11,7 +11,7 @@ const getCities = async (req, res) => {
     });
     console.warn(err);
   }*/
-  res.send("Hello2");
+  res.json({message: "sdf"});
 };
 
 
