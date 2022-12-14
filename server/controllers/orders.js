@@ -14,7 +14,7 @@ const getOrders = async (req, res) => {
   //   });
   //   console.warn(err);
   // }
-  res.status(200).json({ cs: "sd" });
+  res.status(200).json({cs:"sd"});
 };
 
 // Создать заказ
