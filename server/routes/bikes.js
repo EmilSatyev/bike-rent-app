@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const {
+  getBikes,
   getCities,
   getSizes,
   getTypes,
   getBrands,
 } = require("../controllers/bikes");
 
+// получить все велосипеды
+router.get("/bikes", getBikes);
 
 // получить размеры
 router.get("/sizes", getSizes);
