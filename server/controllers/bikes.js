@@ -7,8 +7,13 @@ const Size = require("../models/size");
 // Получить все велосипеды
 const getBikes = async (req, res) => {
   try {
+    const search = req.query.search || "";
 
-    const bikes = await Bike.find({ name: { $regex: 'Poly', $options: "i" } })
+    const bikes = await Bike.find({
+      name: { $regex: search, $options: "i" },
+    })
+      .populate("cityIds")
+      .exec();
 
     res.status(200).json(bikes);
   } catch (err) {
