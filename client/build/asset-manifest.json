@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1d387c99.css",
-    "main.js": "/static/js/main.0e92ed59.js",
+    "main.js": "/static/js/main.961c11e8.js",
     "static/media/9-bittsa.jpg": "/static/media/9-bittsa.a022ae03b49158c5168d.jpg",
     "static/media/1-krylatskie-holmy.jpg": "/static/media/1-krylatskie-holmy.43bc72abe5c9402fb3a5.jpg",
     "static/media/7-sokolniki.jpg": "/static/media/7-sokolniki.304373e2537384f0389b.jpg",
@@ -28,10 +28,10 @@
     "static/media/hero-item-bg.svg": "/static/media/hero-item-bg.692059a8940b84a7602d.svg",
     "static/media/right-shevron.svg": "/static/media/right-shevron.6d4899b123ee12934701.svg",
     "main.1d387c99.css.map": "/static/css/main.1d387c99.css.map",
-    "main.0e92ed59.js.map": "/static/js/main.0e92ed59.js.map"
+    "main.961c11e8.js.map": "/static/js/main.961c11e8.js.map"
   },
   "entrypoints": [
     "static/css/main.1d387c99.css",
-    "static/js/main.0e92ed59.js"
+    "static/js/main.961c11e8.js"
   ]
 }

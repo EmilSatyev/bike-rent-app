@@ -29,6 +29,7 @@ function App() {
   }, [userToken, dispatch]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (status === "success" && location.pathname !== "/booking") {
       dispatch(clearSelected());
       dispatch(clearFilter());
