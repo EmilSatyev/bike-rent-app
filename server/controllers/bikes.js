@@ -9,7 +9,7 @@ const getBikes = async (req, res) => {
   try {
     const search = req.query.search || "";
 
-    let city = req.query.city || "moscow";
+    let city = req.query.city || "ufa";
     const cities = await City.find();
     city = cities.find((c) => c.value === city).id;
 
@@ -17,6 +17,7 @@ const getBikes = async (req, res) => {
       name: { $regex: search, $options: "i" },
     })
       .populate("cityIds")
+      .populate({path:"orderIds", populate:'cityId'})
       .where("cityIds").in(city)
       .exec();
 
