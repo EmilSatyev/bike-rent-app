@@ -14,11 +14,7 @@ app.use("/api/", require("./routes/orders"));
 app.use("/api/", require("./routes/userRoutes"));
 
 app.get("/api/test", (req, res) => {
-  res.send({
-    w: __dirname,
-    w1: path.join(__dirname, "../"),
-    w2: path.join(__dirname, "../../"),
-  });
+  res.sendFile(path.join(__dirname, "../client/"));
 });
 
 app.use(express.static(path.join(__dirname, "../client/build")));
