@@ -1,0 +1,23 @@
+:root {
+  // base
+  --font-family: 'Montserrat', sans-serif;
+  --offset: 57px;
+  --delay: .3s;
+  --content-width: 1160px;
+  --container-offset: 40px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --radius: 20px;
+
+  @media (max-width: 880px) {
+    --container-offset: 20px;
+  }
+
+  // colors
+  --primary-color: #297FFF;
+  --primary-hover: #005EFF;
+  --text-color: #14233D;
+  --bg-color: #F2F4F7;
+  --note-color: #ABB1C5;
+  --white: #fff;
+}
+

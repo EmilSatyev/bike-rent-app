@@ -1,0 +1,43 @@
+.root {
+  &__title {
+    margin-bottom: var(--container-offset);
+  }
+
+  ol {
+    counter-reset: item;
+
+    li {
+      display: block;
+    }
+
+    li:before {
+      content: counters(item, ".") ". ";
+      counter-increment: item;
+    }
+  }
+
+  &__list {
+    & > li {
+      margin-bottom: 30px;
+
+      &::before {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+
+    ol > li + li,
+    ol {
+      margin-top: 10px;
+    }
+  }
+
+  &__list_title {
+    display: inline-block;
+  }
+
+  &__list_title {
+    margin-bottom: 10px;
+  }
+}

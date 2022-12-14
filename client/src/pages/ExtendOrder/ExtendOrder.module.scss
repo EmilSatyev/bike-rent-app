@@ -1,0 +1,27 @@
+.root {
+  &__title {
+    margin-bottom: var(--container-offset);
+  }
+
+  &__form {
+    max-width: 560px;
+  }
+
+  &__addPayment {
+    margin: var(--container-offset) 0;
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--note-color);
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+  }
+}

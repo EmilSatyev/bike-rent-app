@@ -1,0 +1,36 @@
+.personal-info-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  .btn-wrap {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 260px;
+  }
+}
+
+.personal-info-caution {
+  margin-bottom: -20px;
+
+  @media (max-width: 880px) {
+    margin-bottom: 0;
+  }
+  .link-btn {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+}

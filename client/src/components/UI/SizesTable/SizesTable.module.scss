@@ -1,0 +1,27 @@
+.root {
+   &__table {
+    border-collapse: collapse;
+     width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid #dde3eb;
+    color: #737b98;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 11px 10px;
+  }
+
+  th {
+    font-weight: 500;
+    text-align: left;
+    color: var(--note-color);
+    width: 236px;
+
+    @media (max-width: 880px) {
+      width: auto;
+    }
+  }
+}

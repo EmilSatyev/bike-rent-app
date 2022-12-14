@@ -1,0 +1,31 @@
+.root {
+  &__content {
+    display: flex;
+    align-items: stretch;
+    gap: var(--container-offset);
+
+    @media (max-width: 880px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__left {
+    flex: 1;
+
+
+  }
+
+  &__image {
+    border-radius: 20px;
+    flex: 1;
+    background-image: url("../../assets/images/about.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 3 / 2;
+  }
+}

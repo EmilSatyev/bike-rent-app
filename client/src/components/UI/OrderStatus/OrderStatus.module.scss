@@ -1,0 +1,32 @@
+.root {
+  border: 1px solid #ff6b00;
+  border-radius: 6px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  white-space: nowrap;
+  font-size: 14px;
+
+  &--processing {
+    color: #ff6b00;
+  }
+
+  &--delivering {
+    color: #edab00;
+    border-color: #edab00;
+  }
+
+  &--working {
+    color: #28b737;
+    border-color: #28b737;
+  }
+
+  &--completed {
+    color: var(--text-color);
+    border-color: var(--text-color);
+  }
+
+  &--canceled {
+    color: red;
+    border-color: red;
+  }
+}

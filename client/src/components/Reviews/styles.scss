@@ -1,0 +1,33 @@
+.reviews-slider {
+  .swiper-wrapper {
+    margin-bottom: 73px;
+  }
+
+  .swiper-slide {
+    & > div {
+      background-color: #fff;
+      padding: 27px 24px;
+      border-radius: 15px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+    }
+
+    .author {
+      margin-top: 30px;
+      text-align: center;
+
+      svg {
+        margin-right: 20px;
+      }
+    }
+  }
+  .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 20px;
+    width: 17px;
+    height: 17px;
+  }
+}

@@ -1,0 +1,69 @@
+.mySwiper2 {
+  height: 27vw;
+  max-height: 335px;
+  width: 100%;
+  margin-bottom: 20px;
+  @media (max-width: 880px) {
+    height: 43vw;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+}
+
+.mySwiper {
+  height: 90px;
+  box-sizing: border-box;
+  padding: 10px 0 0;
+
+  .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+    border-radius: 15px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  background-color: #dde3eb;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    background-image: url("../../../src/assets/icons/right-shevron.svg");
+    width: 7px;
+    height: 10px;
+    margin-left: 2px;
+    color: var(--text-color);
+  }
+}
+
+.swiper-button-prev {
+  &::after {
+    transform: rotate(180deg);
+    margin-left: -2px;
+  }
+}

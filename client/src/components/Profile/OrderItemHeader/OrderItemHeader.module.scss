@@ -1,0 +1,17 @@
+.root {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 160px);
+  justify-items: end;
+  align-items: center;
+  gap: var(--container-offset);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--text-color);
+
+  & > div:first-child {
+    justify-self: start;
+    margin-left: 30px;
+    white-space: nowrap;
+  }
+}

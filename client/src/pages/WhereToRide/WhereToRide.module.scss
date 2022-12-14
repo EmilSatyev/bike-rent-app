@@ -1,0 +1,30 @@
+.root {
+  &__title {
+    margin-bottom: var(--container-offset);
+  }
+
+  &__content {
+    display: flex;
+    gap: var(--container-offset);
+
+    @media (max-width: 880px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__left {
+    flex: 1;
+  }
+
+  &__image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 20px;
+
+    }
+  }
+}

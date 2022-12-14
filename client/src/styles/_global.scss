@@ -1,0 +1,298 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: var(--font-family);
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  width: 100%;
+  min-height: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-anchor: none;
+  font-family: var(--font-family);
+
+  color: var(--text-color);
+}
+
+#root {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+img {
+  //width: 100%;
+  //height: 100%;
+  //
+  //object-fit: cover;
+}
+
+a,
+.link-btn {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--primary-hover);
+  }
+}
+
+.active {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: 0;
+  font-family: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+//
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 50px var(--container-offset) 70px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+
+  @media (max-width: 880px) {
+    padding: 30px;
+  }
+  @media (max-width: 670px) {
+    padding: 20px;
+  }
+}
+
+.appendix {
+  margin-top: 34px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 74px;
+    height: 34px;
+    background-image: url("../../src/assets/images/intersect.svg");
+    top: -34px;
+    left: 39px;
+  }
+}
+
+.title {
+  margin: 0;
+  color: var(--text-color);
+
+  &--h1 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 120%;
+    @media (max-width: 1160px) {
+      font-size: 36px;
+    }
+  }
+
+  &--h2 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 110%;
+  }
+
+  &--h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+.btn {
+  background-color: var(--primary-color);
+  height: 60px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: var(--white);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+    background-color: var(--primary-hover);
+    color: var(--white);
+  }
+
+  &--small {
+    height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  &--outlined {
+    background-color: unset;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+
+  &--disabled {
+    background-color: unset;
+    color: var(--note-color);
+    border: 1px solid var(--note-color);
+    pointer-events: none;
+  }
+
+  &--fixedWidth {
+    max-width: 260px;
+  }
+}
+
+main,
+footer {
+  padding: 0 15px;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.modal-custom {
+  width: 640px !important;
+  max-width: calc(100vw - 140px);
+
+  @media (max-width: 620px) {
+    max-width: calc(100vw - 30px);
+  }
+
+  .ant-modal-content {
+    border-radius: 15px;
+  }
+
+  .ant-modal-body {
+    padding: 60px 40px;
+  }
+
+  .ant-modal-close {
+    right: -48px;
+
+    @media (max-width: 620px) {
+      right: 10px;
+      top: 10px;
+      .ant-modal-close-x {
+        color: var(--text-color) !important;
+      }
+    }
+
+    .ant-modal-close-x {
+      width: 26px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .confirm-text {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 110%;
+    color: var(--text-color);
+    margin-bottom: 35px;
+  }
+
+  .confirm-btn {
+    margin-bottom: 20px;
+  }
+}
+
+.modal-bike {
+  width: 1040px !important;
+  max-width: calc(100vw - 140px);
+
+  @media (max-width: 620px) {
+    max-width: calc(100vw - 40px);
+
+  }
+}
+
+.ant-spin {
+  display: block;
+  margin: 0 auto;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+
+  & + p {
+    margin-top: 20px;
+  }
+}
+
+.custom-drawer {
+  top: 80px;
+  z-index: 999;
+
+  .ant-drawer-content-wrapper {
+    transition: var(--delay);
+  }
+
+  @media (min-width: 880px) {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    .ant-drawer-body {
+      padding-top: 78px;
+      padding-bottom: 98px;
+    }
+  }
+}

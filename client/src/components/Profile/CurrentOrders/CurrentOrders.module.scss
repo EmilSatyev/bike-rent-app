@@ -1,0 +1,19 @@
+.root {
+  &__header {
+
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 160px);
+    justify-items: end;
+    gap: var(--container-offset);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--note-color);
+
+    & > div:first-child {
+      justify-self: start;
+      white-space: nowrap;
+      min-width: 190px;
+    }
+  }
+}

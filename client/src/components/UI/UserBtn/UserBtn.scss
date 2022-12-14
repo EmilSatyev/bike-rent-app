@@ -1,0 +1,39 @@
+.dropdown-custom {
+  .ant-dropdown-menu {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .ant-dropdown-menu-title-content {
+    button {
+      width: 100%;
+      text-align: left;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.drawer-btns {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  button, a {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--primary-color);
+    
+    &:hover {
+      text-decoration: underline;
+      color: var(--primary-hover);
+    }
+  }
+  @media (min-width: 480px) {
+    display: none;
+  }
+}

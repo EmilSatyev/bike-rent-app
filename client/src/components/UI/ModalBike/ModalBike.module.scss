@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  gap: var(--container-offset);
+
+  & > div{
+    width: 50%;
+  }
+  &__left {
+    width: calc(50% - 20px);
+    @media (max-width: 880px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__table {
+    text-align: left;
+    color: var(--text-color);
+
+    th {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      color: var(--note-color);
+      padding:0 20px 20px 0;
+    }
+    td {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 140%;
+      padding-bottom: 20px;
+    }
+
+    tr:last-child {
+      td, th {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: 880px) {
+    flex-direction: column;
+
+    & > div {
+      width: 100%;
+    }
+  }
+}

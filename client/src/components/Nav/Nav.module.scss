@@ -1,0 +1,12 @@
+.root {
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+  &__item {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+

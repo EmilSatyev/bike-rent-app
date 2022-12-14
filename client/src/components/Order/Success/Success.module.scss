@@ -1,0 +1,21 @@
+.root {
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: var(--container-offset);
+    & > a {
+      flex-basis: 260px;
+    }
+    @media(max-width: 620px) {
+      flex-direction: column;
+
+      & > a {
+        flex-basis: auto;
+      }
+    }
+  }
+}
