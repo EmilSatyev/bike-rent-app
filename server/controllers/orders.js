@@ -13,6 +13,22 @@ const getOrders = async (req, res) => {
   }
 };
 
+// Отменить заказ
+const cancelOrder = async (req, res) => {
+  try {
+    const { orderId } = req.body;
+    await Order.findOneAndUpdate({ _id: orderId }, { status: "canceled" });
+
+    res.status(201).json({ message: "успех" });
+  } catch (err) {
+    res.status(501).json({
+      error: "Не удалось отменить заказ",
+    });
+    console.warn(err);
+  }
+};
+
 module.exports = {
   getOrders,
+  cancelOrder,
 };
