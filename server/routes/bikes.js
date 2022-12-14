@@ -6,10 +6,14 @@ const {
   getSizes,
   getTypes,
   getBrands,
+  getSingleBike
 } = require("../controllers/bikes");
 
 // получить все велосипеды
 router.get("/bikes", getBikes);
+
+// получить велик
+router.get("/bikes/:id", getSingleBike);
 
 // получить размеры
 router.get("/sizes", getSizes);

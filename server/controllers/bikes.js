@@ -63,6 +63,21 @@ const getBikes = async (req, res) => {
   }
 };
 
+// получить велик
+const getSingleBike = async (req, res) => {
+  try {
+    const bike = await Bike.find({ _id: req.params.id });
+
+    res.status(200).json(bike);
+  } catch (err) {
+    res.status(400).json({
+      message: "Не удалось получить велик",
+    });
+    console.warn(err);
+  }
+};
+
+//
 // Получить города
 const getCities = async (req, res) => {
   try {
@@ -125,4 +140,5 @@ module.exports = {
   getTypes,
   getSizes,
   getBikes,
+  getSingleBike,
 };
