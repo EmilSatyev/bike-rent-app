@@ -32,13 +32,23 @@ const getBikes = async (req, res) => {
       size = sizes.filter((s) => values.includes(s.value)).map((s) => s.id);
     }
 
+    let brand = req.query.brand || "All";
+    const brands = await Brand.find();
+    if (brand === "All") {
+      brand = brands.map((b) => b.id);
+    } else {
+      const values = req.query.brand.split(",");
+      brand = brands.filter((b) => values.includes(b.value)).map((b) => b.id);
+    }
+
     const bikes = await Bike.find({
       name: { $regex: search, $options: "i" },
     })
-      .populate("cityIds sizesId typeId")
+      .populate("cityIds brandId sizesId typeId orderIds")
       .where("cityIds").in(city)
       .where("typeId").in(type)
       .where("sizesId").in(size)
+      .where("brandId").in(brand)
       .exec();
 
     res.status(200).json(bikes);
