@@ -67,7 +67,7 @@ const getBikes = async (req, res) => {
 const getSingleBike = async (req, res) => {
 
   res.status(400).json({
-    message: "Не удалось получить велик",
+    message: req.params.id,
   });/*
   try {
     const bike = await Bike.find({ _id: req.params.id });
