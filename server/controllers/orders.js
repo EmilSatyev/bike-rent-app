@@ -1,4 +1,7 @@
 const Order = require("../models/order");
+const City = require("../models/сity");
+const Bike = require("../models/bike");
+const User = require("../models/userModel");
 
 // Получить все заказы
 const getOrders = async (req, res) => {
