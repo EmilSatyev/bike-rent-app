@@ -17,7 +17,6 @@ const getBikes = async (req, res) => {
       name: { $regex: search, $options: "i" },
     })
       .populate("cityIds")
-      .populate({path:"orderIds", populate:'cityId'})
       .where("cityIds").in(city)
       .exec();
 
