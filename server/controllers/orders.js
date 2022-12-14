@@ -28,6 +28,48 @@ const cancelOrder = async (req, res) => {
   }
 };
 
+// Создать заказ
+const createOrder = async (req, res) => {
+  try {
+    const { userId, dateStart, dateEnd, city, bikesId, totalPrice, days } =
+      req.body;
+    const cities = await City.find();
+    const cityId = cities.find((c) => c.value === city)._id;
+
+    const order = await Order.create({
+      dateStart,
+      dateEnd,
+      cityId,
+      bikesId,
+      totalPrice,
+      days,
+      isPayed: false,
+      status: "processing",
+    });
+
+    await User.findOneAndUpdate(
+      { _id: userId },
+      { $push: { orderIds: order._id } }
+    );
+
+    await Bike.updateMany(
+      {
+        _id: {
+          $in: bikesId,
+        },
+      },
+      { $push: { orderIds: order._id } }
+    );
+
+    res.status(201).json(order);
+  } catch (err) {
+    res.status(500).json({
+      message: "Не удалось добавить заказ",
+    });
+    console.warn(err);
+  }
+};
+
 // Продлить аренду
 const extendOrder = async (req, res) => {
   try {
@@ -55,4 +97,5 @@ module.exports = {
   getOrders,
   cancelOrder,
   extendOrder,
+  createOrder,
 };
