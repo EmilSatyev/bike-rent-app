@@ -7,11 +7,14 @@ const Size = require("../models/size");
 // Получить все велосипеды
 const getBikes = async (req, res) => {
   try {
-    const bikes = await Bike.find({ name: { $regex: "", $options: "i" } })
-      .populate("cityIds brandId sizesId typeId")
-      .populate({ path: "orderIds", populate: "cityId" })
-      .exec();
-    res.status(200).json(bikes);
+    // const search = req.query.search || "";
+    //
+    // const bikes = await Bike.find({ name: { $regex: search, $options: "i" } })
+    //   .populate("cityIds brandId sizesId typeId")
+    //   .populate({ path: "orderIds", populate: "cityId" })
+    //   .exec();
+
+    res.status(200).json({med:"s"});
   } catch (err) {
     res.status(500).json({
       message: "Не удалось получить список велосипедов",
