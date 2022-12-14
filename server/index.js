@@ -14,20 +14,21 @@ app.use("/api/", require("./routes/orders"));
 app.use("/api/", require("./routes/userRoutes"));
 
 app.get("/api/test", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.send("Hello");
 });
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join(__dirname, "../client/build/index.html"),
+    path.join(__dirname, "../client/build/index.html" ),
     function (err) {
       if (err) {
         res.status(500).send(err);
       }
     }
   );
+
 });
 
 app.use(notFound);
