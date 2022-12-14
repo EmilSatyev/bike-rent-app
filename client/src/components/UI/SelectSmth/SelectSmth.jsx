@@ -47,7 +47,7 @@ const SelectSmth = ({ name }) => {
         form.setFieldValue(name, selectData.defaultValue);
       })
       .catch((err) => console.log("ошибка при получении списка фильтров", err));
-  }, [setSelectData, form, name, selectData]);
+  }, [setSelectData]);
 
   const handleChange = (value) => {
     if (name === "cities") {
