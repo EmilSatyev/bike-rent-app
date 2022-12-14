@@ -9,10 +9,15 @@ const getBikes = async (req, res) => {
   try {
     const search = req.query.search || "";
 
+    let city = req.query.city || "moscow";
+    const cities = await City.find();
+    city = cities.find((c) => c.value === city).id;
+
     const bikes = await Bike.find({
       name: { $regex: search, $options: "i" },
     })
       .populate("cityIds")
+      .where("cityIds").in(city)
       .exec();
 
     res.status(200).json(bikes);
