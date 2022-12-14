@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use("/static", express.static(__dirname + "/assets"));
 app.use("/api/", require("./routes/bikes"));
-// app.use("/api/", require("./routes/orders"));
+app.use("/api/", require("./routes/orders"));
 
 app.get("/api/test", (req, res) => {
   res.send("Hello");
