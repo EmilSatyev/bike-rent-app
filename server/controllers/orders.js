@@ -1,4 +1,4 @@
-// const Order = require("../models/order");
+const Order = require("../models/order");
 
 // Получить все заказы
 const getOrders = async (req, res) => {
@@ -11,7 +11,8 @@ const getOrders = async (req, res) => {
   //   });
   //   console.warn(err);
   // }
-  res.status(200).json({cs:"sd"});
+  const orders = await Order.find().populate("cityId").exec();
+  res.status(200).json(orders);
 };
 
 module.exports = {
