@@ -17,11 +17,11 @@ app.get("/api/test", (req, res) => {
   res.send("Hello");
 });
 
-app.use(express.static(path.join("../client/build")));
+app.use(express.static(path.join("https://bike-rent-app-zeta.vercel.app/client/build")));
 
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join("../client/build/index.html" ),
+    path.join("https://bike-rent-app-zeta.vercel.app/client/build/index.html" ),
     function (err) {
       if (err) {
         res.status(500).send(err);
