@@ -13,6 +13,7 @@ const getBikes = async (req, res) => {
       .populate({ path: "orderIds", populate: "cityId" })
       .exec();
 
+
     res.status(200).json(bikes);
   } catch (err) {
     res.status(500).json({
