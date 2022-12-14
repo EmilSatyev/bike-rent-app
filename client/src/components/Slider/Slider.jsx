@@ -33,22 +33,22 @@ const Slider = ({ bikeImage }) => {
           <img src={bikeImage} alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65200.jpg" alt="Bike" />
+          <img src="static/65200.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65202.jpg" alt="Bike" />
+          <img src="static/65202.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65203.jpg" alt="Bike" />
+          <img src="static/65203.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65204.jpg" alt="Bike" />
+          <img src="static/65204.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65205.jpg" alt="Bike" />
+          <img src="static/65205.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65206.jpg" alt="Bike" />
+          <img src="static/65206.jpg" alt="Bike" />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -64,22 +64,22 @@ const Slider = ({ bikeImage }) => {
           <img src={bikeImage} alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65200.jpg" alt="Bike" />
+          <img src="static/65200.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65202.jpg" alt="Bike" />
+          <img src="static/65202.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65203.jpg" alt="Bike" />
+          <img src="static/65203.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65204.jpg" alt="Bike" />
+          <img src="static/65204.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65205.jpg" alt="Bike" />
+          <img src="static/65205.jpg" alt="Bike" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:8080/static/65206.jpg" alt="Bike" />
+          <img src="static/65206.jpg" alt="Bike" />
         </SwiperSlide>
       </Swiper>
     </>
