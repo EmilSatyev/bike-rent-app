@@ -28,7 +28,31 @@ const cancelOrder = async (req, res) => {
   }
 };
 
+// Продлить аренду
+const extendOrder = async (req, res) => {
+  try {
+    const { id, extendDate, days, totalPrice } = req.body;
+    await Order.findOneAndUpdate(
+      { _id: id },
+      {
+        dateEnd: extendDate,
+        days,
+        totalPrice,
+        isPayed: false,
+      }
+    );
+
+    res.status(201).json({ message: "успех" });
+  } catch (err) {
+    res.status(501).json({
+      error: "Не удалось продлить аренду",
+    });
+    console.warn(err);
+  }
+};
+
 module.exports = {
   getOrders,
   cancelOrder,
+  extendOrder,
 };
