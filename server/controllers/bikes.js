@@ -65,16 +65,19 @@ const getBikes = async (req, res) => {
 
 // получить велик
 const getSingleBike = async (req, res) => {
+
+  res.status(400).json({
+    message: "Не удалось получить велик",
+  });/*
   try {
     const bike = await Bike.find({ _id: req.params.id });
-
     res.status(200).json(bike);
   } catch (err) {
     res.status(400).json({
       message: "Не удалось получить велик",
     });
     console.warn(err);
-  }
+  }*/
 };
 
 //
