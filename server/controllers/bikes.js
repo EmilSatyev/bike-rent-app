@@ -2,7 +2,7 @@ const City = require("../models/сity");
 
 // Получить города
 const getCities = async (req, res) => {
-  /*try {
+  try {
     const cities = await City.find();
     res.status(200).json(cities);
   } catch (err) {
@@ -10,9 +10,7 @@ const getCities = async (req, res) => {
       message: "Не удалось города",
     });
     console.warn(err);
-  }*/
-  const cities = await City.find();
-  res.json(cities);
+  }
 };
 
 
