@@ -65,8 +65,6 @@ const getBikes = async (req, res) => {
 
 // получить велик
 const getSingleBike = async (req, res) => {
-  const bike = await Bike.find({ _id: req.params.id });
-  res.status(200).json(bike);/*
   try {
     const bike = await Bike.find({ _id: req.params.id });
     res.status(200).json(bike);
@@ -75,7 +73,7 @@ const getSingleBike = async (req, res) => {
       message: "Не удалось получить велик",
     });
     console.warn(err);
-  }*/
+  }
 };
 
 //
