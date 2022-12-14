@@ -47,6 +47,7 @@ const CurrentOrders = () => {
             >
               {orders
                 .filter((order) => order.status !== "completed")
+                .reverse()
                 .map((order) => (
                   <Panel
                     header={<OrderItemHeader {...order} />}
