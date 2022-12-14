@@ -13,11 +13,32 @@ const getBikes = async (req, res) => {
     const cities = await City.find();
     city = cities.find((c) => c.value === city).id;
 
+    let type = req.query.type || "All";
+    const types = await BikeType.find();
+    if (type === "All") {
+      type = types.map((t) => t.id);
+    } else {
+      const values = req.query.type.split(",");
+
+      type = types.filter((t) => values.includes(t.value)).map((t) => t.id);
+    }
+
+    let size = req.query.size || "All";
+    const sizes = await Size.find();
+    if (size === "All") {
+      size = sizes.map((s) => s.id);
+    } else {
+      const values = req.query.size.split(",");
+      size = sizes.filter((s) => values.includes(s.value)).map((s) => s.id);
+    }
+
     const bikes = await Bike.find({
       name: { $regex: search, $options: "i" },
     })
-      .populate("cityIds").populate({path:"orderIds", populate:'cityId'})
+      .populate("cityIds sizesId typeId")
       .where("cityIds").in(city)
+      .where("typeId").in(type)
+      .where("sizesId").in(size)
       .exec();
 
     res.status(200).json(bikes);
