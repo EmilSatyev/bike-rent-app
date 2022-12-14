@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Form, Input } from "antd";
 import { SvgSelector } from "../../../helpers/svgSelector";
 import { updateUserDetails } from "../../../store/services/userService";
+import {useNavigate} from "react-router-dom";
 
 const cx = cnBind.bind(styles);
 
@@ -15,6 +16,7 @@ const PersonalData = () => {
 
   const [form] = Form.useForm();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (userInfo && isEdit) {
@@ -36,6 +38,7 @@ const PersonalData = () => {
 
     await dispatch(updateUserDetails({ id, ...formObj }));
     setIsEdit(false);
+    navigate("/user-profile", { state: { tabId: 3 } });
   };
   const handleClick = () => {
     setIsEdit(true);
@@ -80,7 +83,7 @@ const PersonalData = () => {
                   if (!value) {
                     return Promise.resolve();
                   }
-                  if (/[^0-9a-zA-Z!@#$%^&*]/.test(value) || value.length < 6) {
+                  if (/[^0-9a-zA-Z!@#$%^&*-]/.test(value) || value.length < 6) {
                     return Promise.reject(new Error("Некорректный пароль"));
                   }
                   return Promise.resolve();
@@ -117,7 +120,7 @@ const PersonalData = () => {
             rules={[
               ({ getFieldValue }) => ({
                 validator(_, value) {
-                  if (/[^0-9a-zA-Z!@#$%^&*]/.test(value)) {
+                  if (/[^0-9a-zA-Z!@#$%^&*-]/.test(value)) {
                     return Promise.reject(new Error("Некорректный пароль"));
                   }
                   if (getFieldValue("password") === value) {
@@ -144,13 +147,20 @@ const PersonalData = () => {
               placeholder="Введите пароль"
             />
           </Form.Item>
-
-          <Button
-            className={cx("btn", "btn--fixedWidth", styles.root__btn)}
-            htmlType="submit"
-          >
-            Сохранить
-          </Button>
+          <div className={styles.root__btns}>
+            <Button
+              className={cx("btn", "btn--fixedWidth", styles.root__btn)}
+              htmlType="submit"
+            >
+              Сохранить
+            </Button>
+            <button
+              onClick={() => setIsEdit(false)}
+              className={cx("btn", "btn--fixedWidth", "btn--outlined")}
+            >
+              Отменить
+            </button>
+          </div>
           {error ? <div className="user-error">{error}</div> : null}
         </Form>
       ) : (

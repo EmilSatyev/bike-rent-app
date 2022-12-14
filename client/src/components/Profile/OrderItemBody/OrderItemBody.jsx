@@ -12,14 +12,14 @@ import { formatDate } from "../../../helpers/dateFunctions";
 const cx = cnBind.bind(styles);
 
 const OrderItemBody = ({
-  _id,
-  bikesId,
-  totalPrice,
-  days,
-  dateStart,
-  dateEnd,
-  status,
-}) => {
+                         _id,
+                         bikesId,
+                         totalPrice,
+                         days,
+                         dateStart,
+                         dateEnd,
+                         status,
+                       }) => {
   const { isLoading, error } = useSelector((state) => state.orders);
   const dispatch = useDispatch();
 
