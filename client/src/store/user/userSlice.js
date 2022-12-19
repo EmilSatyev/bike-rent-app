@@ -6,15 +6,22 @@ import {
   userLogin,
 } from "../services/userService";
 
-// initialize userToken from local storage
-const userToken = localStorage.getItem("userToken")
-  ? localStorage.getItem("userToken")
-  : null;
+let tokenObj;
+
+if (localStorage.getItem("userToken")) {
+  tokenObj = JSON.parse(localStorage.getItem("userToken"));
+  if (tokenObj.expire <= new Date().getTime()) {
+    localStorage.removeItem("userToken");
+    tokenObj = null;
+  }
+} else {
+  tokenObj = null;
+}
 
 const initialState = {
   loading: false,
   userInfo: null,
-  userToken,
+  userToken: tokenObj?.token,
   error: null,
   success: false,
 };
@@ -42,7 +49,7 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // login user
+    // логин
     builder.addCase(userLogin.pending, (state) => {
       state.loading = true;
       state.error = null;
@@ -56,14 +63,14 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = payload;
     });
-    // register user
+    // регистрация
     builder.addCase(registerUser.pending, (state) => {
       state.loading = true;
       state.error = null;
     });
-    builder.addCase(registerUser.fulfilled, (state, { payload }) => {
+    builder.addCase(registerUser.fulfilled, (state) => {
       state.loading = false;
-      state.success = true; // registration successful
+      state.success = true;
     });
     builder.addCase(registerUser.rejected, (state, { payload }) => {
       state.loading = false;
@@ -77,11 +84,11 @@ const userSlice = createSlice({
       state.loading = false;
       state.userInfo = payload;
     });
-    builder.addCase(getUserDetails.rejected, (state, { payload }) => {
+    builder.addCase(getUserDetails.rejected, (state) => {
       state.loading = false;
     });
 
-    //Update user info
+    // обновление
     builder.addCase(updateUserDetails.pending, (state) => {
       state.loading = true;
     });
@@ -92,6 +99,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { logout, setCancelStatus } = userSlice.actions;
+export const {logout, setCancelStatus} = userSlice.actions;
 
 export default userSlice.reducer;
