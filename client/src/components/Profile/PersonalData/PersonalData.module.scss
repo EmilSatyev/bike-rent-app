@@ -36,7 +36,7 @@
     color: var(--text-color);
   }
 
-  &__btn {
+  &__btns {
     grid-area: 3/1/4/3;
 
     @media (max-width: 880px) {
