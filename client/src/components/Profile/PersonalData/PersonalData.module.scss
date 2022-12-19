@@ -38,12 +38,18 @@
 
   &__btns {
     grid-area: 3/1/4/3;
+    display: flex;
+    gap: 30px;
 
     @media (max-width: 880px) {
+      margin-top: 30px;
       grid-area: 4/1/5/3;
     }
     @media (max-width: 630px) {
       grid-area: 7/1/8/2;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
     }
   }
 
