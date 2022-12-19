@@ -19,6 +19,7 @@ const Reviews = () => {
         <Swiper
           className="reviews-slider"
           slidesPerView={1}
+          spaceBetween={20}
           pagination={{
             clickable: true,
           }}
