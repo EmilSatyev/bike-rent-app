@@ -18,14 +18,8 @@ export const userLogin = createAsyncThunk(
         config
       );
 
-      const now = new Date();
-      const nowPlusTwelveHours = now.setHours(now.getHours() + 12);
-
-      const tokenObj = {
-        token: data.userToken,
-        expire: nowPlusTwelveHours,
-      };
-      localStorage.setItem("userToken", JSON.stringify(tokenObj));
+      // store user's token in local storage
+      localStorage.setItem("userToken", data.userToken);
 
       return data;
     } catch (error) {
