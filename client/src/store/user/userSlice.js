@@ -6,15 +6,22 @@ import {
   userLogin,
 } from "../services/userService";
 
-// initialize userToken from local storage
-const userToken = localStorage.getItem("userToken")
-  ? localStorage.getItem("userToken")
-  : null;
+let tokenObj;
+
+if (localStorage.getItem("userToken")) {
+  tokenObj = JSON.parse(localStorage.getItem("userToken"));
+  if (tokenObj?.expire <= new Date().getTime()) {
+    localStorage.removeItem("userToken");
+    tokenObj = null;
+  }
+} else {
+  tokenObj = null;
+}
 
 const initialState = {
   loading: false,
   userInfo: null,
-  userToken,
+  userToken: tokenObj?.token,
   error: null,
   success: false,
 };
@@ -24,7 +31,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      localStorage.removeItem("userToken"); // delete token from storage
+      localStorage.removeItem("userToken");
       state.loading = false;
       state.userInfo = null;
       state.userToken = null;
