@@ -1,6 +1,6 @@
 # Аренда велосипедов
 
-### [https://bike-rent-app-zeta.vercel.app/](bike-rent-app-zeta.vercel.app)
+### [bike-rent-app-zeta.vercel.app](https://bike-rent-app-zeta.vercel.app/)
 
 - NodeJS
 - MongoDB, Mongoose
