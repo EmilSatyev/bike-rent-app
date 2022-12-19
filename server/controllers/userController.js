@@ -31,10 +31,8 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  // check if user email exists in db
   const user = await User.findOne({ email });
 
-  // return user obj if their password matches
   if (user && (await user.matchPassword(password))) {
     res.json({
       _id: user._id,
@@ -44,7 +42,7 @@ const loginUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(401);
-    throw new Error("Invalid email or password");
+    throw new Error("Неверный email или пароль");
   }
 });
 

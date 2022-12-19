@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1d387c99.css",
+    "main.js": "/static/js/main.1b0b2d33.js",
+    "static/media/9-bittsa.jpg": "/static/media/9-bittsa.a022ae03b49158c5168d.jpg",
+    "static/media/1-krylatskie-holmy.jpg": "/static/media/1-krylatskie-holmy.43bc72abe5c9402fb3a5.jpg",
+    "static/media/7-sokolniki.jpg": "/static/media/7-sokolniki.304373e2537384f0389b.jpg",
+    "static/media/4-kuzminki.jpg": "/static/media/4-kuzminki.2e8dea854ed5ef56c695.jpg",
+    "static/media/8-vdnh.jpg": "/static/media/8-vdnh.6e220528abdf20c1a689.jpg",
+    "static/media/3-izmajlovo.jpg": "/static/media/3-izmajlovo.072d6f1f98aafaf40c5f.jpg",
+    "static/media/bike1.png": "/static/media/bike1.a541509f87260b6364dc.png",
+    "static/media/6-park-gorkogo.jpg": "/static/media/6-park-gorkogo.2e255f193233fa0a4de9.jpg",
+    "static/media/5-naberezhnye.jpg": "/static/media/5-naberezhnye.a467aa34590f5cd8ba9c.jpg",
+    "static/media/2-lianozovo.jpg": "/static/media/2-lianozovo.66b0413f23bcea907a1b.jpg",
+    "static/media/bike2.jpg": "/static/media/bike2.c8976e1927df4cbba30f.jpg",
+    "static/media/about.jpg": "/static/media/about.808c7c92b9002c542e64.jpg",
+    "static/media/Montserrat-Bold.woff2": "/static/media/Montserrat-Bold.2695cf49ae7429c18e10.woff2",
+    "static/media/Montserrat-Medium.woff2": "/static/media/Montserrat-Medium.ee886f49896d934d6c26.woff2",
+    "static/media/Montserrat-SemiBold.woff2": "/static/media/Montserrat-SemiBold.b5837b161389882292f7.woff2",
+    "static/media/Montserrat-Regular.woff2": "/static/media/Montserrat-Regular.fc432875c59da8482816.woff2",
+    "static/media/Frame 21.png": "/static/media/Frame 21.ae38e2e7875c04a964a9.png",
+    "static/media/Frame 19.png": "/static/media/Frame 19.65f8d8f057c426ca4d8c.png",
+    "static/media/Frame 20.png": "/static/media/Frame 20.2d40d2bf97cd2a6b3d3a.png",
+    "static/media/logo.svg": "/static/media/logo.d8b5e17cedb9c15e48e4277de4c6e681.svg",
+    "index.html": "/index.html",
+    "static/media/btn.svg": "/static/media/btn.fe26dcf5b6ce15ddc343.svg",
+    "static/media/intersect.svg": "/static/media/intersect.ecd7f8c722263e2a4950.svg",
+    "static/media/hero-item-bg.svg": "/static/media/hero-item-bg.692059a8940b84a7602d.svg",
+    "static/media/right-shevron.svg": "/static/media/right-shevron.6d4899b123ee12934701.svg",
+    "main.1d387c99.css.map": "/static/css/main.1d387c99.css.map",
+    "main.1b0b2d33.js.map": "/static/js/main.1b0b2d33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d387c99.css",
+    "static/js/main.1b0b2d33.js"
+  ]
+}
